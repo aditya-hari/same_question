@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+<div name="home">
+  <h1>
+    <center> Are these two questions similar? </center>
+  </h1>
+  <form method=post>
+    {{ form.question1.label }}
+    {{ form.question1 }}
+
+    {{ form.question2.label }}
+    {{ form.question2 }}
+
+    {{ form.submit }}
+  </form>
+</div>
+{% endblock %}
