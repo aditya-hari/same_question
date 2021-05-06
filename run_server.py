@@ -24,13 +24,13 @@ class ReusableForm(Form):
 def load_keras_model():
     global model, stop_words, vocab
     stop_words = set(stopwords.words('english'))
-    f = open('/home/aditya/Documents/Flask/Questions/vocab','rb')
+    f = open('VOCAB_FILE_PATH','rb')
     vocab = pickle.load(f)
     f.close()
-    with open('/home/aditya/Documents/Flask/Questions/model.json','r') as f:
+    with open('MODEL_JSON_PATH','r') as f:
         model_json = f.read()
     model = model_from_json(model_json)
-    model.load_weights('/home/aditya/Documents/Flask/Questions/model.h5')
+    model.load_weights('MODEL_H5_PATH')
     
 @app.route("/",  methods=['GET', 'POST'])
 def frontpage():
